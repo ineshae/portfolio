@@ -1,8 +1,0 @@
-{
-  "name": "Aura Portfolio",
-  "description": "A fluid, motion-driven portfolio inspired by modern mesh gradient aesthetics and Framer AI.",
-  "requestFramePermissions": [],
-  "majorCapabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
-}
