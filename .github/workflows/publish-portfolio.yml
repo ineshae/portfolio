@@ -1,0 +1,73 @@
+name: Publish portfolio to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/publish-portfolio.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: portfolio-pages
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Copy the current portfolio
+        shell: bash
+        run: |
+          set -euo pipefail
+          SOURCE="https://yejun-design-portfolio.mystic-coati-9944.chatgpt.site"
+          rm -rf docs
+          mkdir -p docs/assets
+          curl --fail --silent --show-error --location "$SOURCE/" -o docs/index.html
+          curl --fail --silent --show-error --location "$SOURCE/style.css" -o docs/style.css
+          curl --fail --silent --show-error --location "$SOURCE/app.js" -o docs/app.js
+          {
+            grep -Eo '[A-Za-z0-9._-]+\.(webp|pdf)' docs/index.html
+            grep -Eo '[A-Za-z0-9._-]+\.(webp|pdf)' docs/app.js
+          } | sort -u > /tmp/portfolio-assets.txt
+          while IFS= read -r asset; do
+            curl --fail --silent --show-error --location "$SOURCE/assets/$asset" -o "docs/assets/$asset"
+          done < /tmp/portfolio-assets.txt
+          touch docs/.nojekyll
+
+      - name: Save the independent copy in GitHub
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish portfolio site [skip ci]"
+            git push
+          fi
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
