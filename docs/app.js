@@ -20,7 +20,7 @@ projects.unshift({
   num:'01',
   category:'UX RESEARCH · EYE TRACKING UT',
   title:'강남언니 · 아이트래킹 사용성 평가',
-  subtitle:'히트맵과 스캔패스 분석으로 UX 문제점과 개선 방향 도출',
+  subtitle:'강남언니 앱을 대상으로 아이트래킹 UT를 진행하고, 히트맵과 스캔패스 데이터를 선별·추출하여 시선 흐름을 분석하고 UX 문제점과 설계 개선 방향을 도출했습니다.',
   cover:'gangnamunni-cover.svg',
   style:'contain',
   context:'2026 서비스측정 및 평가 · 팀 프로젝트',
