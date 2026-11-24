@@ -14,6 +14,25 @@ const yoonseul=projects.find(p=>p.id==='yoonseul');
 yoonseul.videoIntro='시니어가 로봇 윤슬을 사용하는 과정을 그린 시나리오 영상입니다.';
 yoonseul.videos=[['윤슬 사용 시나리오','https://youtu.be/9MilWGh1ZCY']];
 projects.push({id:'bigdata',num:'05',category:'PUBLIC DATA · XR SERVICE',title:'실버리드 · 시니어 XR 독서 커뮤니티',subtitle:'공공데이터와 AI로 연결하는 맞춤형 독서·커뮤니티 경험',cover:'bigdata-6.webp',style:'contain',context:'2024 공공·민간 빅데이터 활용 창업경진대회 · 입선',awardLabel:'빅데이터 활용 창업경진대회 · 입선',description:'공공데이터와 사용자 관심사 데이터를 바탕으로 시니어에게 도서와 독서 모임을 추천하는 XR 서비스 기획입니다. 대화형 AI 캐릭터 가이드, 개인 라이브러리, 소규모 커뮤니티를 연결하고 시니어에게 적합한 조작 방식과 VR 기기 대여 방안을 함께 제안했습니다.',points:[['문제','시니어의 디지털 이용 장벽과 관심사에 맞는 독서·여가 활동 연결의 어려움.'],['서비스 제안','공공 도서관 데이터와 사용자 데이터를 활용한 맞춤형 도서·동아리 추천, 대화형 AI 안내와 XR 독서 경험.'],['성과','2024년 사회보장정보와 공공·민간 빅데이터를 활용한 국민 행복 서비스 발굴 창업경진대회 입선 · 오아시스팀.']],gallery:[['bigdata-6.webp','실버리드 — 개인 라이브러리와 독서 커뮤니티'],['bigdata-1.webp','사용자 관심사 데이터 분석 및 맞춤형 추천 구상'],['bigdata-5.webp','대화형 AI 캐릭터 가이드 시스템 구성'],['bigdata-8.webp','소규모 독서 모임, 공간 커스텀과 발표 공유'],['bigdata-award.webp','2024 공공·민간 빅데이터 활용 창업경진대회 입선 상장']],pdf:'bigdata.pdf',nameNote:'2024년 수상 당시 이름은 김명인이었으며, 2024년 8월 14일 김예준으로 개명했습니다. 따라서 상장에는 개명 전 이름인 김명인이 표기되어 있습니다.'});
+// 강남언니 아이트래킹 UT — 프로젝트 목록 첫 번째 배치
+projects.unshift({
+  id:'gangnamunni',
+  num:'01',
+  category:'UX RESEARCH · EYE TRACKING UT',
+  title:'강남언니 · 아이트래킹 사용성 평가',
+  subtitle:'히트맵과 스캔패스 분석으로 UX 문제점과 개선 방향 도출',
+  cover:'gangnamunni-cover.svg',
+  style:'contain',
+  context:'2026 서비스측정 및 평가 · 팀 프로젝트',
+  description:'강남언니 앱을 대상으로 아이트래킹 UT를 진행하고, 히트맵과 스캔패스 데이터를 선별·추출하여 시선 흐름을 분석하고 UX 문제점과 설계 개선 방향을 도출했습니다.',
+  points:[
+    ['연구 대상','강남언니 앱의 시술 탐색·이벤트 저장·후보 비교 및 선택 과정.'],
+    ['담당 역할','아이트래킹 UT에서 히트맵과 스캔패스 데이터 선별·추출, 시선 이동 패턴 분석.'],
+    ['도출 결과','주요 정보의 주목 영역과 탐색 흐름을 바탕으로 UX 문제점과 설계 개선 방향 정리.']
+  ],
+  gallery:[['gangnamunni-cover.svg','강남언니 앱 아이트래킹 사용성 테스트 및 데이터 분석']]
+});
+projects.forEach((p,i)=>{p.num=String(i+1).padStart(2,'0')});
 function videoSection(p){return p.videos?`<section class="project-videos" aria-label="프로젝트 영상"><h3>${p.id==='urop'?'연령별 가변형 공간 프로토타입':'윤슬 사용 시나리오'}</h3><p>${p.videoIntro}</p><div class="video-links">${p.videos.map(([label,url])=>`<a href="${url}" target="_blank" rel="noopener"><span class="play" aria-hidden="true">▶</span><span><strong>${label}</strong><small>YouTube에서 영상 보기 ↗</small></span></a>`).join('')}</div></section>`:''}
 
 const tools = [ ['Figma','중','figma'],['Unity','하','unity'],['Python','중하','python'],['DaVinci Resolve','중','davinci'],['TouchDesigner','하','touchdesigner'],['Kling','중','kling'] ];
