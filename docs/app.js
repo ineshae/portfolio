@@ -32,6 +32,8 @@ projects.unshift({
   ],
   gallery:[['gangnamunni-cover.svg','강남언니 앱 아이트래킹 사용성 테스트 및 데이터 분석']]
 });
+const arIndex=projects.findIndex(p=>p.id==='ar');
+if(arIndex>=0)projects.push(projects.splice(arIndex,1)[0]);
 projects.forEach((p,i)=>{p.num=String(i+1).padStart(2,'0')});
 function videoSection(p){return p.videos?`<section class="project-videos" aria-label="프로젝트 영상"><h3>${p.id==='urop'?'연령별 가변형 공간 프로토타입':'윤슬 사용 시나리오'}</h3><p>${p.videoIntro}</p><div class="video-links">${p.videos.map(([label,url])=>`<a href="${url}" target="_blank" rel="noopener"><span class="play" aria-hidden="true">▶</span><span><strong>${label}</strong><small>YouTube에서 영상 보기 ↗</small></span></a>`).join('')}</div></section>`:''}
 
