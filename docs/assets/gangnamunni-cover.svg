@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff9c8a"/><stop offset="1" stop-color="#f46b54"/></linearGradient><linearGradient id="k" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#ffe5dd"/></linearGradient></defs>
+<rect width="1600" height="1000" fill="url(#g)"/>
+<circle cx="1370" cy="150" r="470" fill="#ffd9cf" opacity=".21"/>
+<circle cx="130" cy="910" r="390" fill="#ffe4d8" opacity=".17"/>
+<rect x="170" y="125" width="1260" height="745" rx="28" fill="#fff" opacity=".15"/>
+<rect x="228" y="220" width="620" height="545" rx="25" fill="#fff" opacity=".91"/>
+<text x="284" y="287" fill="#34404a" font-family="sans-serif" font-size="29" font-weight="bold">Eye Tracking Analysis</text>
+<g opacity=".8">
+<rect x="290" y="330" width="200" height="360" rx="22" fill="url(#k)" stroke="#e1e4e7" stroke-width="4"/>
+<rect x="522" y="330" width="200" height="360" rx="22" fill="url(#k)" stroke="#e1e4e7" stroke-width="4"/>
+<g fill="#d9dfe4"><rect x="315" y="360" width="145" height="15" rx="7"/><rect x="315" y="393" width="140" height="92" rx="10"/><rect x="315" y="500" width="125" height="13" rx="6"/><rect x="315" y="530" width="115" height="60" rx="8"/><rect x="547" y="360" width="145" height="15" rx="7"/><rect x="547" y="393" width="140" height="92" rx="10"/><rect x="547" y="500" width="125" height="13" rx="6"/><rect x="547" y="530" width="115" height="60" rx="8"/></g>
+<g><circle cx="400" cy="434" r="76" fill="#fb523e" opacity=".34"/><circle cx="400" cy="434" r="47" fill="#f5a223" opacity=".47"/><circle cx="400" cy="434" r="21" fill="#efed5a" opacity=".8"/><path d="M563 410 L650 445 L600 532 L675 590" stroke="#f56e55" stroke-width="7" fill="none"/><g fill="#ff7b65"><circle cx="563" cy="410" r="15"/><circle cx="650" cy="445" r="15"/><circle cx="600" cy="532" r="15"/><circle cx="675" cy="590" r="15"/></g></g>
+</g>
+<text x="925" y="344" fill="#ffffff" font-family="sans-serif" font-size="33" letter-spacing="3">UX RESEARCH</text>
+<text x="925" y="441" fill="#ffffff" font-family="sans-serif" font-size="80" font-weight="bold">강남언니</text>
+<text x="925" y="518" fill="#ffffff" font-family="sans-serif" font-size="37">아이트래킹 사용성 평가</text>
+<path d="M925 564 H1350" stroke="#ffffff" stroke-width="3" opacity=".65"/>
+<text x="925" y="632" fill="#ffffff" font-family="sans-serif" font-size="32">HEATMAP · SCANPATH</text>
+<text x="925" y="692" fill="#ffffff" font-family="sans-serif" font-size="29">2026 서비스측정 및 평가</text>
+</svg>
